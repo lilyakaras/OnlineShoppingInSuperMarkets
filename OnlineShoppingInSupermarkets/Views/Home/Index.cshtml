@@ -4,5 +4,20 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Introduce <a href="https://github.com/C-online-marathon/task-authentication-authorization-roman-zaruba-lilya-karas">our project</a>.</p>
+    @{
+        DateTime dayOfWeek = DateTime.Now;
+        string greeting = "";
+        @if (dayOfWeek.Hour > 6 && dayOfWeek.Hour < 12)
+        { greeting = "Good Morning!"; }
+        else
+        {
+            if (dayOfWeek.Hour > 12 && dayOfWeek.Hour < 17)
+                greeting = "Good Afternoon!";
+            else
+                greeting = "Good Evening!";
+        }
+    }
+    <p>Here in Ukraine: @dayOfWeek.DayOfWeek</p>
+    <p>We wish you: @greeting</p>
+    <p>Today is @dayOfWeek.DayOfWeek </p>
 </div>
